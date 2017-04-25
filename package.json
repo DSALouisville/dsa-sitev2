@@ -7,7 +7,7 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "lint": "eslint pages",
     "dev": "next",
-    "build": "babel testsrc -d test && babel pages -d build"
+    "build": "babel src -d ."
   },
   "author": "",
   "license": "ISC",
@@ -31,6 +31,6 @@
     "eslint-plugin-react": "^6.10.3",
     "jsdom": "^9.12.0",
     "mocha": "^3.2.0",
-    "react-addons-test-utils": "^15.5.1",
+    "react-addons-test-utils": "^15.5.1"
   }
 }
