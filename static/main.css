@@ -1,0 +1,72 @@
+@font-face {
+  font-family: Manifold;
+  src: url(ManifoldDSA-Regular.woff2);
+}
+
+@font-face {
+  font-family: ManifoldX;
+  src: url(ManifoldDSA-Heavy.woff);
+}
+
+@font-face {
+  font-family: ManifoldB;
+  src: url(ManifoldDSA-Bold.woff2);
+}
+.louisville {
+  position: relative;
+  height: 20rem;
+  font-family: "ManifoldB";
+  font-size: 5rem;
+  width: 13rem;
+  background-color: #EC1F27;
+  padding-bottom: 3rem;
+  line-height: 5rem;
+}
+
+.louisville img {
+  width: 100%;
+  max-width: 13rem;
+  opacity: .25%;
+}
+
+.cityname{
+  position: absolute;
+  bottom: 0;
+  padding-left: 0.3rem;
+}
+
+.louis {
+  letter-spacing: -0.2rem;
+}
+
+.ville {
+  letter-spacing: 0.0rem;
+}
+
+.dsa {
+  margin-top: -2rem;
+  padding-left: 0.6rem;
+  padding-top: 0.3rem;
+  letter-spacing: 1.2rem;
+  font-family: "ManifoldX";
+  width: 12.40rem;
+  font-size: 5rem;
+  color: white;
+  background-color: black;
+}
+
+.words {
+  font-family: "Manifold";
+  font-size: 2rem;
+  padding-left: 0.4rem;
+}
+
+.dem {
+  letter-spacing: 0.28rem;
+}
+.soc {
+  letter-spacing: 0.45rem;
+}
+.amer {
+  letter-spacing: 0.30rem;
+}
