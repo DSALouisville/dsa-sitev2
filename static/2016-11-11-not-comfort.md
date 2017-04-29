@@ -1,12 +1,4 @@
----
-layout: post
-excerpt: "The time for focusing on what might have been ended when it no longer could be"
-title: No Time For Comfort
-date: 2016-11-11 10:14:44
-author: Joshua Goodnewt
-tags:
----
-
+export const post = `
 I find the focus on the sliver of a popular vote won by Hillary more depressing than anything. It's the definition of a pyrrhic victory. Yes, had we abolished the electoral college after 2000, she would have won by a sliver--maybe more if people didn't protest vote because they felt their vote didn't matter in their red-state homes. But she won by (at current count) ~300k votes. That's ~.25% of the voting public, and less than .1% of the American population. It feels like a rounding error at this point, and it makes up her entire margin of victory _against Donald Trump_.
 
 Maybe it comforts you that, in another universe--one without the electoral college--Hillary won. That's not this universe. She knew the stakes, knew the game, outspent Trump by millions, and failed. Maybe it comforts you because you think that the popular vote shows that the hate you see across the country doesn't "represent the will of the American people," but it does--either through direct volition or indifference to the abject racism and misogyny that characterized Trump's campaign. Five million registered voters who voted in 2012 stayed home when faced with choosing between Hillary Clinton or the fearful, hateful id of White America made (orange) flesh.
@@ -17,3 +9,4 @@ The time for focusing on what might have been ended when it no longer could be. 
 
 
 *In Louisville/So. In and want to get involved? [Contact](http://goo.gl/I4MVf9) us! Elsewhere? Join [DSA](http://dsausa.org) today!*
+`;`

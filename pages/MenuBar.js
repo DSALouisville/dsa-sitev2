@@ -1,4 +1,5 @@
 import React from 'react';
+import Link from 'next/link';
 
 class MenuBar extends React.Component {
   constructor(props) {
@@ -22,9 +23,13 @@ class MenuBar extends React.Component {
   render() {
     return (
       <ul className={`MenuBar ${this.state.clear}`}>
-        <li>Blog</li>
+        <li>
+          <Link href="/blog">Blog</Link>
+        </li>
         <li>About</li>
-        <li>Events</li>
+        <li>
+          <Link href="/calendar">Events</Link>
+        </li>
         <li>Get Invovled</li>
         <li>Minutes and Bylaws</li>
       </ul>

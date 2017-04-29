@@ -12,8 +12,10 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "moment": "^2.18.1",
     "next": "^2.1.1",
     "react": "^15.5.3",
+    "react-big-calendar": "^0.13.0",
     "react-dom": "^15.5.3",
     "react-fittext": "0.0.7",
     "react-markdown": "^2.5.0",

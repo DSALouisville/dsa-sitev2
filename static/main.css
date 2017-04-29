@@ -58,5 +58,28 @@ body {
   max-width: 40%;
   float: right;
   margin-right: 20%;
+  margin-top: 10rem;
+}
+
+.blog-body {
   text-align: justify;
+}
+
+.blog-title, .blog-author {
+  font-family: "ManifoldB";
+}
+
+.blog-title {
+  font-size: 2rem;
+}
+
+.blog-author {
+  font-size: 1.5rem;
+}
+
+.Calendar {
+  max-width: 40%;
+  float: right;
+  margin-right: 20%;
+  margin-top: 10rem;
 }
