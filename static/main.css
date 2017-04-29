@@ -12,6 +12,29 @@
   font-family: ManifoldB;
   src: url(ManifoldDSA-Bold.woff2);
 }
+
+body {
+  box-sizing: border-box;
+  font-family: "Manifold";
+}
+
+.MenuBar {
+  list-style: none;
+  display: inline-block;
+  float: right;
+  width: 50%;
+  background-color: red;
+}
+
+.MenuBar li {
+  display: inline;
+  margin-left: 3%;
+  margin-right: 3%;
+}
+
+.clear {
+  clear: both;
+}
 .louisville {
   position: relative;
   height: 20rem;
@@ -56,7 +79,6 @@
 }
 
 .words {
-  font-family: "Manifold";
   font-size: 2rem;
   padding-left: 0.4rem;
 }
