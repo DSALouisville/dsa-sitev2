@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactMarkdown from 'react-markdown';
-import Base from './Base';
+import Base from '../modules/Base';
 import post from '../static/blog1';
 
 class blog extends React.Component {
