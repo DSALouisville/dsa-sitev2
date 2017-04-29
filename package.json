@@ -7,7 +7,8 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "lint": "eslint pages",
     "dev": "next",
-    "build": "babel src -d ."
+    "build": "next build",
+    "start": "next start"
   },
   "author": "",
   "license": "ISC",
@@ -17,9 +18,7 @@
     "react": "^15.5.3",
     "react-big-calendar": "^0.13.0",
     "react-dom": "^15.5.3",
-    "react-fittext": "0.0.7",
-    "react-markdown": "^2.5.0",
-    "react-measure": "^1.4.7"
+    "react-markdown": "^2.5.0"
   },
   "devDependencies": {
     "babel": "^6.23.0",
@@ -28,7 +27,6 @@
     "babel-preset-airbnb": "^2.2.3",
     "babel-register": "^6.24.1",
     "chai": "^3.5.0",
-    "enzyme": "^2.8.0",
     "eslint": "^3.19.0",
     "eslint-config-airbnb": "^14.1.0",
     "eslint-plugin-import": "^2.2.0",
