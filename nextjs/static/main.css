@@ -87,3 +87,7 @@ body {
 .post-input {
   margin-top: 100vh;
 }
+
+.blog-index {
+  float: right;
+}
