@@ -1,6 +1,11 @@
-const a = 'hello';
-const b = (txt) => {
-  return `${text} world.`;
-}
+import express from 'express';
 
-console.log(b(a));
+const app = express()
+
+app.get('/', (req, res) => {
+  res.send('Hello World!')
+})
+
+app.listen(5000, () => {
+  console.log('Example app listening on port 5000!')
+})
