@@ -6,8 +6,16 @@ import _ from 'lodash';
 import postListTest from './postListTest';
 import postIdTest from './postIdTest';
 import newPostTest from './newPostTest';
+import { setup, tearDown } from './helpers';
+
 
 describe('API', () => {
+  before (async () => {
+    await setup();
+  });
+  after(async () => {
+    await tearDown();
+  });
   describe('Routes respond', () => {
     it ('responds at GET /postList', async () => {
       const resp = await request({

@@ -22,7 +22,7 @@ const initPost = {
   ],
 }
 
-const setup = () => {
+export const setup = () => new Promise((resolve, reject) => {
   MongoClient.connect(url, async (error, db) => {
     if (error) {
       console.log('Connection Error(test setup): ', error);
@@ -31,16 +31,33 @@ const setup = () => {
     coll.remove({});
     coll.insert(initPost);
     db.close();
+    resolve();
   });
-}
+  return;
+});
 
-const tearDown = () => {
+export const tearDown = () => new Promise((resolve, reject) => {
   MongoClient.connect(url, async (error, db) => {
     if (error) {
-      console.log('Connection Error(test setup): ', error);
+      console.log('Connection Error(test tearDown): ', error);
     }
     const coll = db.collection('posts');
     coll.remove({});
     db.close();
+    resolve();
   });
-}
+  return;
+})
+
+
+export const countPosts = () => new Promise((resolve, reject) => {
+  MongoClient.connect(url, async (error, db) => {
+    if (error) {
+      console.log('Connection Error(test countPosts): ', error);
+    }
+    const coll = db.collection('posts');
+    const n = await coll.count({});
+    resolve(n);
+    db.close();
+  });
+});
