@@ -1,5 +1,6 @@
 import express from 'express';
 import postList from './postList';
+import postId from './postId';
 
 const app = express();
 const PORT = 5000;
@@ -14,9 +15,7 @@ app.post('/newPost', (req, res) => {
   res.send('200');
 });
 
-app.get('/post/:id', (req, res) => {
-  res.send('200');
-});
+app.get('/post/:id', postId);
 
 app.listen(PORT, () => {
   console.log(`Example app listening on port ${PORT}!`)
