@@ -12,9 +12,51 @@ const newPost = {
   excerpt: 'nb',
   tags: ['new', 'post'],
   assets: [{ url: 'example.com', type: 'image', alt: 'text' }],
+  auth: {
+    username: 'test',
+    password: 'password',
+  }
 }
 
 const newPostTest = () => describe('POST /newPost', () => {
+  it('requires an auth object', async () => {
+    const before = await countPosts();
+    try {
+      const resp = await request({
+        method: 'POST',
+        url: 'http://localhost:5000/newPost',
+        body: _.omit(newPost, 'auth'),
+        json: true,
+        resolveWithFullResponse: true,
+      });
+    } catch (e) {
+      const after = await countPosts();
+      expect(e.statusCode).to.equal(400);
+      expect(before).to.equal(after);
+      return;
+    }
+    expect(true).to.be.false;
+  });
+  it('requires a correct password', async () => {
+    const badPass = _.cloneDeep(newPost);
+    badPass.auth.password = 'derp';
+    const before = await countPosts();
+    try {
+      const resp = await request({
+        method: 'POST',
+        url: 'http://localhost:5000/newPost',
+        body: badPass,
+        json: true,
+        resolveWithFullResponse: true,
+      });
+    } catch (e) {
+      const after = await countPosts();
+      expect(e.statusCode).to.equal(400);
+      expect(before).to.equal(after);
+      return;
+    }
+    expect(true).to.be.false;
+  });
   it('requires a body', async () => {
     const before = await countPosts();
     try {
@@ -29,7 +71,9 @@ const newPostTest = () => describe('POST /newPost', () => {
       const after = await countPosts();
       expect(e.statusCode).to.equal(400);
       expect(before).to.equal(after);
+      return;
     }
+    expect(true).to.be.false;
   });
   it('saves a post', async () => {
     const before = await countPosts();

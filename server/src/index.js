@@ -3,6 +3,7 @@ import bodyParser from 'body-parser';
 import postList from './postList';
 import postId from './postId';
 import newPost from './newPost';
+import { store, check } from './hashPass';
 
 const app = express();
 app.use(bodyParser());
@@ -24,3 +25,4 @@ app.listen(PORT, () => {
 })
 
 export default app;
+

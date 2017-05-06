@@ -1,3 +1,4 @@
+import 'babel-polyfill';
 import MongoClient from 'mongodb';
 import _ from 'lodash';
 
