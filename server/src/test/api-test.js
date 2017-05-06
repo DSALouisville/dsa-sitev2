@@ -26,12 +26,15 @@ describe('API', () => {
       expect(resp.statusCode).to.equal(200);
     });
     it ('responds at POST at /newPost', async () => {
-      const resp = await request({
-        method: 'POST',
-        url: 'http://localhost:5000/newPost',
-        resolveWithFullResponse: true,
-      });
-      expect(resp.statusCode).to.equal(200);
+      try {
+        const resp = await request({
+          method: 'POST',
+          url: 'http://localhost:5000/newPost',
+          resolveWithFullResponse: true,
+        });
+      } catch(e) {
+        expect(e.statusCode).to.equal(400);
+      }
     });
     it ('responds at GET at /post/{id}', async () => {
       const resp = await request({

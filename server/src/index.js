@@ -1,8 +1,12 @@
 import express from 'express';
+import bodyParser from 'body-parser';
 import postList from './postList';
 import postId from './postId';
+import newPost from './newPost';
 
 const app = express();
+app.use(bodyParser());
+
 const PORT = 5000;
 
 app.get('/', (req, res) => {
@@ -11,9 +15,7 @@ app.get('/', (req, res) => {
 
 app.get('/postList', postList);
 
-app.post('/newPost', (req, res) => {
-  res.send('200');
-});
+app.post('/newPost', newPost);
 
 app.get('/post/:id', postId);
 

@@ -15,32 +15,21 @@ const newPost = {
 }
 
 const newPostTest = () => describe('POST /newPost', () => {
-  it('returns a JSON string (string)', async () => {
-    newPost._id = 'test_';
-    const resp = await request({
-      method: 'POST',
-      url: 'http://localhost:5000/newPost',
-      body: newPost,
-      json: true,
-    });
-    const json = JSON.parse(resp);
-    expect(typeof resp).to.equal('string');
-    expect(json).to.be.a.string;
-  });
   it('requires a body', async () => {
     const before = await countPosts();
-    const resp = await request({
-      method: 'POST',
-      url: 'http://localhost:5000/newPost',
-      body: _.omit(newPost, 'body'),
-      json: true,
-      resolveWithFullResponse: true,
-    });
-    const json = JSON.parse(resp.body);
-    const after = await countPosts();
-    expect(resp.statusCode).to.equal('400');
-    expect(resp.body).to.equal('Post must inlcude a body');
-    expect(before).to.equal(after);
+    try {
+      const resp = await request({
+        method: 'POST',
+        url: 'http://localhost:5000/newPost',
+        body: _.omit(newPost, 'body'),
+        json: true,
+        resolveWithFullResponse: true,
+      });
+    } catch (e) {
+      const after = await countPosts();
+      expect(e.statusCode).to.equal(400);
+      expect(before).to.equal(after);
+    }
   });
   it('saves a post', async () => {
     const before = await countPosts();
@@ -52,10 +41,9 @@ const newPostTest = () => describe('POST /newPost', () => {
       json: true,
       resolveWithFullResponse: true,
     });
-    const json = JSON.parse(resp.body);
     const after = await countPosts();
-    expect(resp.statusCode).to.equal('400');
-    expect(resp.body).to.equal('Post must inlcude a body');
+    expect(resp.statusCode).to.equal(200);
+    expect(resp.body.message).to.equal('Post added');
     expect(before).to.equal(after - 1);
   });
 });
