@@ -2,20 +2,21 @@ import React from 'react';
 
 class BlogView extends React.Component {
   render() {
+    const { title, author, body, tags } = this.props.post;
     return (
       <div className="blog-view">
         <div className="blog-title">
-          Title
+          { title }
         </div>
         <div className="blog-author">
-          Author
+          { author }
         </div>
         <div className="blog-body">
-          Body
+          { body }
         </div>
         <div className="blog-tags">
           <ul className="tag-list">
-            <li>A tag</li>
+            <li className="tag">A tag</li>
           </ul>
         </div>
       </div>
