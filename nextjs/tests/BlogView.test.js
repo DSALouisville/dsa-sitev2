@@ -44,4 +44,8 @@ test('Displays the tags', () => {
   expect(tagList.find('ul.tag-list')).to.have.length(1);
   const tags = shallow(tagList.find('ul.tag-list').nodes[ 0 ]);
   expect(tags.find('li.tag')).to.have.length(2);
+  const firstTag = shallow(tags.find('li.tag').nodes[ 0 ]);
+  const secondTag = shallow(tags.find('li.tag').nodes[ 1 ]);
+  expect(firstTag.text()).to.equal('red');
+  expect(secondTag.text()).to.equal('trotsky');
 });
