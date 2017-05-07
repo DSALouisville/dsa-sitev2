@@ -29,7 +29,6 @@ const newPostTest = () => describe('POST /newPost', () => {
         json: true,
         resolveWithFullResponse: true,
       });
-      console.log(resp.body)
     } catch (e) {
       const after = await countPosts();
       expect(e.statusCode).to.equal(400);
