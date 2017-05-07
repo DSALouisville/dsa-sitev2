@@ -33,13 +33,12 @@ export const store = (username, plainPass) => {
   });
 };
 
-export const check = async (username, plainPass, cb) => {
+export const check = async (username, plainPass) => {
   const db = await MongoClient.connect(url)
   const coll = db.collection('users');
   const user = await coll.findOne({ username });
   const hashedPass = user.hashedPassword;
   const result = await bcrypt.compare(plainPass, hashedPass);
-  cb(result);
   db.close();
   return await result;
 };

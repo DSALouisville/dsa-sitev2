@@ -1,14 +1,35 @@
 import 'babel-polyfill';
 import MongoClient from 'mongodb';
 import _ from 'lodash';
+import { check } from './hashPass';
 
 const url = 'mongodb://localhost:27017/test';
 
-const validate = (body) => typeof body === 'string';
+const validate = (post) => typeof post.body === 'string';
 
-const newPost = (req, res) => {
-  if (req.body && !validate(req.body.body)) {
-    res.status(400).send({ message: 'Post must include a body'});
+const authenticate = async (post) => {
+  if (post.auth && post.auth.username && post.auth.password) {
+    const db = await MongoClient.connect(url);
+    const coll = db.collection('users');
+    let user = {};
+    try {
+      user = await coll.findOne({ username: post.auth.username });
+    } catch (e) {
+      return false;
+    }
+    return check(post.auth.username, post.auth.password, user.hashedPassword);
+  }
+  return false;
+};
+
+const newPost = async (req, res) => {
+  if (!validate(req.body)) {
+    res.status(400).send({ message: 'Post must include a body' });
+    return;
+  }
+  const auth = await authenticate(req.body);
+  if (!auth) {
+    res.status(400).send({ message: 'Not authorized' });
     return;
   }
   MongoClient.connect(url, async (error, db) => {
