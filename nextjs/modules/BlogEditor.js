@@ -27,7 +27,7 @@ class BlogEditor extends React.Component {
           <input
             className="u-full-width input"
             name="username"
-            onChange={this.props.updateContent.bind(null, 'username')}
+            onChange={this.props.updateContent.bind(null, 'auth.username')}
             id="username">
           </input>
         </div>
@@ -37,7 +37,7 @@ class BlogEditor extends React.Component {
             className="u-full-width input"
             type="password"
             name="password"
-            onChange={this.props.updateContent.bind(null, 'password')}
+            onChange={this.props.updateContent.bind(null, 'auth.assword')}
             id="password">
           </input>
         </div>
