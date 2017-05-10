@@ -1,5 +1,6 @@
 import React from 'react';
 import _ from 'lodash';
+import Markdown from 'react-markdown';
 
 class BlogView extends React.Component {
   render() {
@@ -19,7 +20,7 @@ class BlogView extends React.Component {
           { author }
         </div>
         <div className="blog-body">
-          { body }
+          <Markdown source={ body }/>
         </div>
         <div className="blog-tags">
           <ul className="tag-list">

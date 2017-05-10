@@ -3,7 +3,7 @@ import { shallow } from 'enzyme';
 import { expect } from 'chai';
 import BlogEditor from '../modules/BlogEditor';
 
-const fakeParentState = { auth: {} };
+const fakeParentState = { };
 
 const fakeUpdate = (name, e) => {
   fakeParentState[name] = e.target.value;
@@ -33,11 +33,6 @@ test('Has a body field', () => {
   expect(editor.find('textarea[name="body"]')).to.have.length(1);
 });
 
-test('Has a tags field', () => {
-  expect(editor.contains(<label htmlFor='tags'>{'tags'}</label>)).to.equal(true);
-  expect(editor.find('input[name="tags"]')).to.have.length(1);
-});
-
 test('Has a password field', () => {
   expect(editor.contains(<label htmlFor='password'>{'password'}</label>)).to.equal(true);
   expect(editor.find('input[name="password"]')).to.have.length(1);
@@ -59,13 +54,13 @@ test('Author field updates parent state', () => {
 test('Username field updates parent state', () => {
   const input = editor.find('input[name="username"]');
   input.simulate('change', { target: { value: 'a username' } })
-  expect(fakeParentState.auth.username).to.equal('a username');
+  expect(fakeParentState.username).to.equal('a username');
 });
 
 test('Password field updates parent state', () => {
   const input = editor.find('input[name="password"]');
   input.simulate('change', { target: { value: 'a password' } })
-  expect(fakeParentState.auth.password).to.equal('a password');
+  expect(fakeParentState.password).to.equal('a password');
 });
 
 test('Body field updates parent state', () => {
