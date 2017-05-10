@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import _ from 'lodash';
 import BlogEditor from '../modules/BlogEditor';
 import BlogView from '../modules/BlogView';
+import Layout from '../modules/Layout';
 
 const fields = [
   'title',
@@ -28,6 +29,7 @@ export default class BlogAuthoring extends Component {
     const post = this.state.post;
     post[name] = e.target.value;
     this.setState({ post });
+    console.log(this.state);
   }
   edit(e) {
     e.preventDefault();
@@ -40,29 +42,16 @@ export default class BlogAuthoring extends Component {
   render() {
     return (
       <div>
-        <div className="container">
-          <div className="row">
-            <div className="u-pull-left">
-              <a href="" onClick={this.edit.bind(this)}>Edit</a>
-            </div>
-          </div>
-        </div>
-        <div className="container">
-          <div className="row">
-            <div className="u-pull-right">
-              <a href="" onClick={this.preview.bind(this)}>Preview</a>
-            </div>
-          </div>
-        </div>
+        <Layout/>
         <div className="container">
           <BlogEditor
             updateContent={this.updateContent.bind(this)}
           />
         </div>
         <div className="container preview">
-        <BlogView
-          post={_.omit(this.state, 'config')}
-        />
+          <BlogView
+            post={this.state.post}
+          />
         </div>
       </div>
     );

@@ -13,7 +13,7 @@
   src: url(ManifoldDSA-Bold.woff2);
 }
 
-body {
+.container {
   box-sizing: border-box;
   font-family: "Manifold";
 }
