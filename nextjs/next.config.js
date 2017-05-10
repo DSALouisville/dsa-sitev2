@@ -8,6 +8,9 @@ module.exports = {
         'process.env.secretKey': JSON.stringify(process.env.secretKey),
       })
     );
+    cfg.node = {
+      fs: 'empty'
+    };
 
     return cfg;
   },

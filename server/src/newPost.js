@@ -2,6 +2,7 @@ import 'babel-polyfill';
 import MongoClient from 'mongodb';
 import _ from 'lodash';
 import { check } from './hashPass';
+import shortid from 'shortid';
 
 const url = 'mongodb://localhost:27017/test';
 
@@ -32,13 +33,14 @@ const newPost = async (req, res) => {
     res.status(400).send({ message: 'Not authorized' });
     return;
   }
+  req.body._id = shortid.generate();
   MongoClient.connect(url, async (error, db) => {
     if (error) {
       console.log('Connection Error(newPost): ', error);
     }
     const coll = db.collection('posts');
     try {
-      const post = await coll.insert(req.body);
+      const post = await coll.insert(_.omit(req.body, 'auth'));
     } catch (e) {
       console.log(`Could not save post: ${e}`);
     }
