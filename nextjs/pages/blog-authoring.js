@@ -3,6 +3,7 @@ import _ from 'lodash';
 import BlogEditor from '../modules/BlogEditor';
 import BlogView from '../modules/BlogView';
 import Layout from '../modules/Layout';
+import request from 'request';
 
 const fields = [
   'title',
@@ -18,12 +19,23 @@ export default class BlogAuthoring extends Component {
     this.state = {
       edit: false,
       post: {
-        auth: {},
       },
     }
   }
 
   postBlog() {
+    const body = _.extend(_.omit(this.state.post, ['username', 'password']), {
+      auth: {
+        username: this.state.post.username,
+        password: this.state.post.password,
+      }
+    });
+    request({
+      url: 'http://localhost:5000/newPost',
+      method: 'POST',
+      body,
+      json: true,
+    });
   }
   updateContent(name, e) {
     const post = this.state.post;
@@ -46,6 +58,7 @@ export default class BlogAuthoring extends Component {
         <div className="container">
           <BlogEditor
             updateContent={this.updateContent.bind(this)}
+            submit={this.postBlog.bind(this)}
           />
         </div>
         <div className="container preview">

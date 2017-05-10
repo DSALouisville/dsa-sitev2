@@ -57,17 +57,13 @@ class BlogEditor extends React.Component {
           </div>
         </FormGroup>
         <FormGroup>
-          <Button onClick={this.props.post}>POST</Button>
+          <Button onClick={this.props.submit}>POST</Button>
         </FormGroup>
       </Form>
     );
   }
 }
 
-BlogEditor.propTypes = {
-  updateContent: React.PropTypes.func,
-  post: React.PropTypes.func,
-};
 
 
 export default BlogEditor;
