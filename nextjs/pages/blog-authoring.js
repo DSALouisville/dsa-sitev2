@@ -41,7 +41,6 @@ export default class BlogAuthoring extends Component {
     const post = this.state.post;
     post[name] = e.target.value;
     this.setState({ post });
-    console.log(this.state);
   }
   edit(e) {
     e.preventDefault();

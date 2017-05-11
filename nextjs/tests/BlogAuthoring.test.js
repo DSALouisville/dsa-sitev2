@@ -2,6 +2,7 @@ import React from 'react';
 import { mount, shallow } from 'enzyme';
 import { expect } from 'chai';
 import BlogAuthoring from '../pages/blog-authoring';
+import _ from 'lodash';
 
 const blog = {
   title: 'Test Blog',
@@ -13,27 +14,30 @@ const blog = {
 const blogAuth = mount(<BlogAuthoring/>);
 
 test('Has an author field', () => {
-  expect(blogAuth.contains(<label htmlFor='author'>{'Author'}</label>)).to.equal(true);
-  expect(blogAuth.find('input[name="author"]')).to.have.length(1);
+  const author = blogAuth.find('input[name="author"]');
+  const label = blogAuth.find({htmlFor: 'author'});
+  expect(author).to.have.length(1);
+  expect(label).to.have.length(1);
+
 });
 
 test('Has a title field', () => {
-  expect(blogAuth.contains(<label htmlFor='title'>{'Title'}</label>)).to.equal(true);
+  expect(blogAuth.find({htmlFor: 'title'})).to.have.length(1);
   expect(blogAuth.find('input[name="title"]')).to.have.length(1);
 });
 
 test('Has a username field', () => {
-  expect(blogAuth.contains(<label htmlFor='username'>{'username'}</label>)).to.equal(true);
+  expect(blogAuth.find({htmlFor: 'username'})).to.have.length(1);
   expect(blogAuth.find('input[name="username"]')).to.have.length(1);
 });
 
 test('Has a body field', () => {
-  expect(blogAuth.contains(<label htmlFor='body'>{'Body'}</label>)).to.equal(true);
+  expect(blogAuth.find({htmlFor: 'body'})).to.have.length(1);
   expect(blogAuth.find('textarea[name="body"]')).to.have.length(1);
 });
 
 test('Has a password field', () => {
-  expect(blogAuth.contains(<label htmlFor='password'>{'password'}</label>)).to.equal(true);
+  expect(blogAuth.find({htmlFor: 'password'})).to.have.length(1);
   expect(blogAuth.find('input[name="password"]')).to.have.length(1);
   expect(blogAuth.find('input[type="password"]')).to.have.length(1);
 });
