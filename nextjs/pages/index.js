@@ -1,10 +1,10 @@
 import React from 'react';
-import Base from '../modules/Base';
+import Layout from '../modules/Layout';
 
 class Index extends React.Component {
   render() {
     return (
-      <Base title="Louiville DSA"/>
+      <Layout />
     )
   }
 }

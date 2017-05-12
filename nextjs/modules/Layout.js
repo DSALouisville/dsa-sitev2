@@ -1,6 +1,7 @@
 import React from 'react';
 import Head from 'next/head'
 import { Container } from 'reactstrap'
+import Base from '../modules/Base';
 
 const Layout = (props) => (
   <div>
@@ -11,6 +12,7 @@ const Layout = (props) => (
       <link rel="stylesheet" href="/static/main.css" />
     </Head>
     <Container>
+      <Base title="Louiville DSA"/>
       {props.children}
     </Container>
   </div>

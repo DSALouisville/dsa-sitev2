@@ -4,7 +4,9 @@ import Markdown from 'react-markdown';
 
 class BlogView extends React.Component {
   render() {
-    const { title, author, body, tags } = this.props.post;
+    const post = this.props.post;
+    post.body = post.body ? post.body : '';
+    const { title, author, body, tags } = post;
     const tagLis = [];
     _.each(tags, (tagText, index) => {
       tagLis.push(

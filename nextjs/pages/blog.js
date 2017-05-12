@@ -4,65 +4,21 @@ import Base from '../modules/Base';
 import AWS from 'aws-sdk';
 import map from 'lodash/map';
 import moment from 'moment';
+import PostList from '../modules/PostList';
+import Layout from '../modules/Layout';
 
-class BlogIndexItem extends React.Component {
-  constructor(props) {
-    super(props)
-  }
-  render() {
-    const {title, author, date, key} = this.props.metadata;
-    render (
-      <li>
-        <span>{title}</span>,
-        <span>{author}</span>,
-        <span>{date.format('YYYY-MM-DD')}</span>,
-      </li>
-    );
-  }
-}
 class blog extends React.Component {
-  constructor(props) {
-    super(props);
-    const options = {
-      accessKeyId: process.env.accessKey,
-      secretAccessKey: process.env.secretKey,
-      region: 'us-east-1',
-    }
-    const s3 = new AWS.S3(options);
-    this.state = {
-      s3,
-    };
-  }
-  componentDidMount() {
-    const s3 = this.state.s3;
-    s3.listObjects({ Bucket: 'dsa-blog' }, (err, data) => {
-      const posts = map(data.Contents, (item) => {
-        const arr = item.Key.split('_');
-        return {
-          date: moment(arr[0]),
-          title: arr[1],
-          author: arr[2],
-          key: arr[3],
-        };
-      })
-      this.setState({
-        posts,
-      });
-    })
+  static async getInitialProps ({req}) {
+    const res = await fetch('http://localhost:5000/postList');
+    const json = await res.json();
+    return { list: json };
   }
   render() {
-    console.log(this.state.posts);
-    const items = map(this.state.posts, (item) => {
-       return (<BlogIndexItem metadata={ item }/>);
-    });
-    console.log(items);
     return (
       <div>
-        <Base title="Blog"/>
-        <ul className="blog-index">
-          {items}
-        </ul>
-        </div>
+        <Layout />
+        <PostList list={this.props.list} />
+      </div>
     );
   }
 }

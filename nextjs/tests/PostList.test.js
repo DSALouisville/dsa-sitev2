@@ -1,7 +1,8 @@
 import React from 'react';
-import { shallow } from 'enzyme';
+import { mount } from 'enzyme';
 import { expect } from 'chai';
 import PostList from '../modules/PostList';
+import PostCard from '../modules/PostCard';
 
 const blog = {
   title: 'Test Blog',
@@ -12,16 +13,16 @@ const blog = {
   excerpt: 'An excerpt, bruh',
 };
 
-const list shallow(<PostList list={[blog, blog]} />);
+const list = mount(<PostList list={[blog, blog]} />);
 
 test('There are two cards', () => {
-  expect(list.find('span.post-card-title')).to.have.length(2);
+  expect(list.find('span')).to.have.length(8);
 });
 
 test('There is a list', () => {
-  expect(list.find('ul.post-list').length).to.have.length(2);
+  expect(list.find('ul.post-list')).to.have.length(1);
 });
 
 test('The list has two things', () => {
-  expect(list.find('li.post-list-item,')).to.have.length(2);
+  expect(list.find('li')).to.have.length(2);
 });

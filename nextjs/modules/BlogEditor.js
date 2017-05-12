@@ -64,6 +64,4 @@ class BlogEditor extends React.Component {
   }
 }
 
-
-
 export default BlogEditor;
