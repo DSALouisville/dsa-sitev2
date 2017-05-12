@@ -24,11 +24,11 @@ class MenuBar extends React.Component {
     return (
       <ul className={`MenuBar ${this.state.clear}`}>
         <li>
-          <Link href="/blog">Blog</Link>
+          <Link href="/blog"><a>Blog</a></Link>
         </li>
         <li>About</li>
         <li>
-          <Link href="/calendar">Events</Link>
+          <Link href="/calendar"><a>Events</a></Link>
         </li>
         <li>Get Invovled</li>
         <li>Minutes and Bylaws</li>

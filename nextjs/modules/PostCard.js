@@ -1,5 +1,6 @@
 import React from 'react';
 import moment from 'moment';
+import Link from 'next/link';
 
 class PostCard extends React.Component {
   render() {
@@ -7,7 +8,11 @@ class PostCard extends React.Component {
     post.date = moment(this.props.date).format('D MMM, YYYY');
     return(
       <div className="post-card">
-        <span className="post-card-title">{post.title}</span>
+        <Link href={{ pathname: '/post', query: { postId: post._id }}}>
+          <span className="post-card-title">
+            <a>{post.title}</a>
+          </span>
+        </Link>
         <span className="post-card-author">{post.author}</span>
         <span className="post-card-date">{post.date}</span>
         <span className="post-card-excerpt">{post.excerpt}</span>

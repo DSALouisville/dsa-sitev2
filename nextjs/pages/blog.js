@@ -16,8 +16,9 @@ class blog extends React.Component {
   render() {
     return (
       <div>
-        <Layout />
-        <PostList list={this.props.list} />
+        <Layout>
+          <PostList list={this.props.list} />
+        </Layout>
       </div>
     );
   }
