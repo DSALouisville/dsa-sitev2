@@ -14,7 +14,7 @@ class BlogView extends React.Component {
       );
     });
     return (
-      <div className={'blog-view col-5'}>
+      <div className={'blog-view'}>
         <div className="blog-title">
           { title }
         </div>
