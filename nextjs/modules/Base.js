@@ -12,12 +12,6 @@ class Base extends React.Component {
     const { title } = this.props;
     return (
       <div>
-        <Head>
-          <title>{title}</title>
-          <link rel="stylesheet" href="/static/main.css"></link>
-        </Head>
-        <Logo className="side"/>
-        <MenuBar/>
       </div>
     )
   }

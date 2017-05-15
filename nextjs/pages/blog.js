@@ -1,7 +1,6 @@
 import React from 'react';
 import ReactMarkdown from 'react-markdown';
 import Base from '../modules/Base';
-import AWS from 'aws-sdk';
 import map from 'lodash/map';
 import moment from 'moment';
 import PostList from '../modules/PostList';

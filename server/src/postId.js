@@ -1,6 +1,6 @@
 import MongoClient from 'mongodb';
 
-const url = 'mongodb://localhost:27017/test';
+const url = 'mongodb://54.162.114.80:27017/test';
 
 const postId = (req, res) => {
   MongoClient.connect(url, async (error, db) => {

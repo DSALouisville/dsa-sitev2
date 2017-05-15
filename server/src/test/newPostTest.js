@@ -24,7 +24,7 @@ const newPostTest = () => describe('POST /newPost', () => {
     try {
       const resp = await request({
         method: 'POST',
-        url: 'http://localhost:5000/newPost',
+        url: 'http://54.162.114.80:5000/newPost',
         body: _.omit(newPost, 'auth'),
         json: true,
         resolveWithFullResponse: true,
@@ -44,7 +44,7 @@ const newPostTest = () => describe('POST /newPost', () => {
     try {
       const resp = await request({
         method: 'POST',
-        url: 'http://localhost:5000/newPost',
+        url: 'http://54.162.114.80:5000/newPost',
         body: badPass,
         json: true,
         resolveWithFullResponse: true,
@@ -62,7 +62,7 @@ const newPostTest = () => describe('POST /newPost', () => {
     try {
       const resp = await request({
         method: 'POST',
-        url: 'http://localhost:5000/newPost',
+        url: 'http://54.162.114.80:5000/newPost',
         body: _.omit(newPost, 'body'),
         json: true,
         resolveWithFullResponse: true,
@@ -80,7 +80,7 @@ const newPostTest = () => describe('POST /newPost', () => {
     newPost._id = 'test__';
     const resp = await request({
       method: 'POST',
-      url: 'http://localhost:5000/newPost',
+      url: 'http://54.162.114.80:5000/newPost',
       body: newPost,
       json: true,
       resolveWithFullResponse: true,

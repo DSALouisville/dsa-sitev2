@@ -2,3 +2,5 @@ node_modules
 nextjs/npm-debug.log
 dist
 .next
+*.pem
+

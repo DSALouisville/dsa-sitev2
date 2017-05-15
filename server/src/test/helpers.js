@@ -1,6 +1,6 @@
 import MongoClient from 'mongodb';
 
-const url = 'mongodb://localhost:27017/test';
+const url = 'mongodb://54.162.114.80:27017/test';
 const initPost = {
   _id : '001',
   title : 'title',

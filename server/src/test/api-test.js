@@ -20,7 +20,7 @@ describe('API', () => {
     it ('responds at GET /postList', async () => {
       const resp = await request({
         method: 'GET',
-        url: 'http://localhost:5000/postList',
+        url: 'http://54.162.114.80:5000/postList',
         resolveWithFullResponse: true,
       });
       expect(resp.statusCode).to.equal(200);
@@ -29,7 +29,7 @@ describe('API', () => {
       try {
         const resp = await request({
           method: 'POST',
-          url: 'http://localhost:5000/newPost',
+          url: 'http://54.162.114.80:5000/newPost',
           resolveWithFullResponse: true,
         });
       } catch(e) {
@@ -39,7 +39,7 @@ describe('API', () => {
     it ('responds at GET at /post/{id}', async () => {
       const resp = await request({
         method: 'GET',
-        url: 'http://localhost:5000/post/001',
+        url: 'http://54.162.114.80:5000/post/001',
         resolveWithFullResponse: true,
       });
       expect(resp.statusCode).to.equal(200);

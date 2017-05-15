@@ -6,40 +6,32 @@ class BlogEditor extends React.Component {
     return (
       <Form>
         <FormGroup>
-          <div className="short-field">
             <Label htmlFor='title'>{'Title'}</Label>
             <Input
-              className="u-full-width input"
               name="title"
               onChange={this.props.updateContent.bind(null, 'title')}
               id="title"
             />
-          </div>
-          <div className="short-field">
             <Label htmlFor='author'>{'Author'}</Label>
             <Input
-              className="u-full-width input"
               name="author"
               onChange={this.props.updateContent.bind(null, 'author')}
               id="author"
             />
-          </div>
-          <div className="long-field">
             <Label htmlFor="body">{'Body'}</Label>
             <Input
               type='textarea'
+              rows="10"
               onChange={this.props.updateContent.bind(null, 'body')}
               name="body"
-              className="u-full-width input content"
               id="content"
             />
-          </div>
+            <FormText>Markdown supported</FormText>
         </FormGroup>
         <FormGroup>
           <div className="short-field">
             <Label htmlFor='username'>{'username'}</Label>
             <Input
-              className="u-full-width input"
               name="username"
               onChange={this.props.updateContent.bind(null, 'username')}
               id="username"
@@ -48,7 +40,6 @@ class BlogEditor extends React.Component {
           <div className="short-field">
             <Label htmlFor='password'>{'password'}</Label>
             <Input
-              className="u-full-width input"
               type="password"
               name="password"
               onChange={this.props.updateContent.bind(null, 'password')}

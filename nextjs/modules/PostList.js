@@ -3,6 +3,7 @@ import _ from 'lodash';
 import PostCard from './PostCard';
 
 class PostList extends React.Component {
+  getInitialState
   render() {
     const list = _.map(this.props.list, (post, index) => {
       return (
