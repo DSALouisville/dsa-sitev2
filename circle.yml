@@ -1,0 +1,3 @@
+test:
+  override:
+    - ./run_tests.sh
