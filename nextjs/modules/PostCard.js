@@ -5,7 +5,7 @@ import Link from 'next/link';
 class PostCard extends React.Component {
   render() {
     const post = this.props.post
-    post.date = moment(this.props.date).format('D MMM, YYYY');
+    post.date = moment.utc(post.date).format('D MMM, YYYY');
     return(
       <div className="post-card">
         <Link href={{ pathname: '/post', query: { postId: post._id }}}>

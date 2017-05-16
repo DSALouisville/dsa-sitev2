@@ -12,20 +12,18 @@ const newPost = {
   excerpt: 'nb',
   tags: ['new', 'post'],
   assets: [{ url: 'example.com', type: 'image', alt: 'text' }],
-  auth: {
-    username: 'test',
-    password: 'password',
-  }
+  username: 'test',
+  password: 'password',
 }
 
 const newPostTest = () => describe('POST /newPost', () => {
-  it('requires an auth object', async () => {
+  it('requires a username', async () => {
     const before = await countPosts();
     try {
       const resp = await request({
         method: 'POST',
-        url: 'http://54.162.114.80:5000/newPost',
-        body: _.omit(newPost, 'auth'),
+        url: 'http://localhost:5000/newPost',
+        body: _.omit(newPost, 'username'),
         json: true,
         resolveWithFullResponse: true,
       });
@@ -39,12 +37,12 @@ const newPostTest = () => describe('POST /newPost', () => {
   });
   it('requires a correct password', async () => {
     const badPass = _.cloneDeep(newPost);
-    badPass.auth.password = 'derp';
+    badPass.password = 'derp';
     const before = await countPosts();
     try {
       const resp = await request({
         method: 'POST',
-        url: 'http://54.162.114.80:5000/newPost',
+        url: 'http://localhost:5000/newPost',
         body: badPass,
         json: true,
         resolveWithFullResponse: true,
@@ -62,7 +60,7 @@ const newPostTest = () => describe('POST /newPost', () => {
     try {
       const resp = await request({
         method: 'POST',
-        url: 'http://54.162.114.80:5000/newPost',
+        url: 'http://localhost:5000/newPost',
         body: _.omit(newPost, 'body'),
         json: true,
         resolveWithFullResponse: true,
@@ -80,7 +78,7 @@ const newPostTest = () => describe('POST /newPost', () => {
     newPost._id = 'test__';
     const resp = await request({
       method: 'POST',
-      url: 'http://54.162.114.80:5000/newPost',
+      url: 'http://localhost:5000/newPost',
       body: newPost,
       json: true,
       resolveWithFullResponse: true,

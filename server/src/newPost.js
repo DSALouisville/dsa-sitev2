@@ -4,21 +4,21 @@ import _ from 'lodash';
 import { check } from './hashPass';
 import shortid from 'shortid';
 
-const url = 'mongodb://54.162.114.80:27017/test';
+const url = 'mongodb://localhost:27017/test';
 
 const validate = (post) => typeof post.body === 'string';
 
 const authenticate = async (post) => {
-  if (post.auth && post.auth.username && post.auth.password) {
+  if (post.username && post.password) {
     const db = await MongoClient.connect(url);
     const coll = db.collection('users');
     let user = {};
     try {
-      user = await coll.findOne({ username: post.auth.username });
+      user = await coll.findOne({ username: post.username });
     } catch (e) {
       return false;
     }
-    return check(post.auth.username, post.auth.password, user.hashedPassword);
+    return check(post.username, post.password, user.hashedPassword);
   }
   return false;
 };

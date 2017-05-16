@@ -8,7 +8,7 @@ const postIdTest = () => describe('GET /post/:id', () => {
   it('returns a JSON string (object)', async () => {
     const resp = await request({
       method: 'GET',
-      url: 'http://54.162.114.80:5000/post/001',
+      url: 'http://localhost:5000/post/001',
     });
     const json = JSON.parse(resp);
     expect(typeof resp).to.equal('string');
@@ -17,7 +17,7 @@ const postIdTest = () => describe('GET /post/:id', () => {
   it('returns the correct data', async () => {
     const resp = await request({
       method: 'GET',
-      url: 'http://54.162.114.80:5000/post/001',
+      url: 'http://localhost:5000/post/001',
     });
     const json = JSON.parse(resp);
     expect(json).to.include.keys([

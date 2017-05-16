@@ -8,7 +8,7 @@ const blog = {
   author: 'Cmde. Boris',
   body: 'Words and words',
   tags: ['red', 'trotsky'],
-  date: new Date('2017-05-11'),
+  date: '2017-05-11',
   excerpt: 'An excerpt, bruh',
 };
 

@@ -12,9 +12,6 @@ const blog = {
 };
 
 const blogAuth = mount(<BlogAuthoring/>);
-blogAuth.setState(blog);
-
-
 
 test('Has an author field', () => {
   const author = blogAuth.find('input[name="author"]');
@@ -74,6 +71,8 @@ test('Body field updates parent state', () => {
   input.simulate('change', { target: { value: 'a body' } })
   expect(blogAuth.state().post.body).to.equal('a body');
 });
+
+blogAuth.setState(blog);
 
 const wrap = blogAuth.find('div.blog-view');
 const tagList = wrap.find('div.blog-tags');

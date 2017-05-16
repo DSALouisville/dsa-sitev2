@@ -15,6 +15,8 @@
   "dependencies": {
     "bootstrap": "^4.0.0-alpha.6",
     "child_process": "^1.0.2",
+    "cldr-data": "^31.0.2",
+    "globalize": "^1.2.3",
     "moment": "^2.18.1",
     "net": "^1.0.2",
     "next": "2.2.0",

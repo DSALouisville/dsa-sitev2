@@ -24,12 +24,7 @@ export default class BlogAuthoring extends Component {
   }
 
   postBlog() {
-    const body = _.extend(_.omit(this.state.post, ['username', 'password']), {
-      auth: {
-        username: this.state.post.username,
-        password: this.state.post.password,
-      }
-    });
+    const body = this.state.post;
     request({
       url: 'http://localhost:5000/newPost',
       method: 'POST',
