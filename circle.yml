@@ -1,3 +1,4 @@
 test:
   override:
+    - npm i -g babel-cli
     - ./run_tests.sh
