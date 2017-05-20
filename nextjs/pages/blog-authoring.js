@@ -26,7 +26,7 @@ export default class BlogAuthoring extends Component {
   postBlog() {
     const body = this.state.post;
     request({
-      url: 'http://localhost:5000/newPost',
+      url: `${process.env.servelUrl}/newPost`,
       method: 'POST',
       body,
       json: true,

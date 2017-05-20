@@ -1,7 +1,7 @@
 import bcrypt from 'bcrypt';
 import MongoClient from 'mongodb';
 
-const url = 'mongodb://localhost:27017/test';
+const url = `${process.env.mongoUrl}`;
 
 export const store = (username, plainPass) => {
   const saltRounds = 10;

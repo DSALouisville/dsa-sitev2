@@ -4,7 +4,7 @@ import _ from 'lodash';
 import { check } from './hashPass';
 import shortid from 'shortid';
 
-const url = 'mongodb://localhost:27017/test';
+const url = `${process.env.mongoUrl}`;
 
 const validate = (post) => typeof post.body === 'string';
 

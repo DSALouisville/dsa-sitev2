@@ -1,6 +1,7 @@
 import React from 'react';
 import Layout from '../modules/Layout';
 import BlogView from '../modules/BlogView';
+import fetch from 'isomorphic-unfetch';
 
 class Index extends React.Component {
   static async getInitialProps({ req, url, query }) {

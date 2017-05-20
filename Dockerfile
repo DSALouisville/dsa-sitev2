@@ -1,5 +1,6 @@
 FROM node:latest
 
+ENV serverUrl="http://localhost:5000"
 # Create app directory
 RUN mkdir -p /usr/src/app
 WORKDIR /usr/src/app

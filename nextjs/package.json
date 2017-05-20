@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "scripts/testDevLocal.sh",
     "lint": "eslint pages",
     "dev": "next",
     "build": "next build",
@@ -17,6 +17,7 @@
     "child_process": "^1.0.2",
     "cldr-data": "^31.0.2",
     "globalize": "^1.2.3",
+    "isomorphic-unfetch": "^1.0.0",
     "moment": "^2.18.1",
     "net": "^1.0.2",
     "next": "2.2.0",

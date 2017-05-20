@@ -1,6 +1,6 @@
 import MongoClient from 'mongodb';
 
-const url = 'mongodb://localhost:27017/test';
+const url = `${process.env.mongoUrl}`;
 
 const postList = (req, res) => {
   MongoClient.connect(url, async (error, db) => {

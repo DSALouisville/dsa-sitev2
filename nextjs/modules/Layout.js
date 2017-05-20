@@ -1,7 +1,6 @@
 import React from 'react';
 import Head from 'next/head'
 import { Container, Row, Col } from 'reactstrap'
-import Base from '../modules/Base';
 import Logo from '../modules/Logo';
 import MenuBar from '../modules/MenuBar';
 

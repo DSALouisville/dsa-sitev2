@@ -3,4 +3,6 @@ nextjs/npm-debug.log
 dist
 .next
 *.pem
+bin
+*.log
 
