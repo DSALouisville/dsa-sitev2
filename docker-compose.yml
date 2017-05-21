@@ -1,0 +1,14 @@
+version: '2'
+services:
+  dsa-sitev2:
+    build: nextjs
+    ports:
+      - "3000:3000"
+  dsa-server:
+    build: server
+    ports:
+      - "5000:5000"
+  mongo:
+    image: "library/mongo"
+    ports:
+      - "27017:27017"

@@ -1,5 +1,6 @@
 FROM node:boron
 
+ENV mongoUrl="mongodb://mongo:27017/test"
 # Create app directory
 RUN mkdir -p /usr/src/app
 WORKDIR /usr/src/app
