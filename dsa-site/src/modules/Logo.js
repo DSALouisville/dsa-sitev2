@@ -1,14 +1,12 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import Link from 'next/link';
+import logo from '../img/logo.png';
 
 class Logo extends React.Component {
   render() {
     return (
       <div className={`Logo ${this.props.className}`}>
-        <Link href="/">
-          <img src="/static/logo-rough.png"></img>
-        </Link>
+        <img src={logo}></img>
       </div>
     )
   }
