@@ -1,0 +1,14 @@
+.post-card:hover {
+  background-color: rgba(236,31,39,0.5);
+}
+
+.post-card a:hover {
+  text-decoration: none;
+  color: black;
+}
+.post-card-title {
+  font-size: 2rem;
+}
+
+.post-card-date {
+}

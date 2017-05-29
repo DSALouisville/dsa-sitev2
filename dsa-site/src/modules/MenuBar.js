@@ -1,6 +1,5 @@
 import React from 'react';
 import { Nav, NavbarToggler, NavbarBrand, Collapse, Navbar, NavItem, NavLink } from 'reactstrap';
-import 'bootstrap/dist/css/bootstrap.css';
 class MenuBar extends React.Component {
   constructor(props) {
     super(props);

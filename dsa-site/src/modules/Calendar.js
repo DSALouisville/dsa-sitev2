@@ -2,23 +2,24 @@ import React from 'react';
 import BigCalendar from 'react-big-calendar';
 import moment from 'moment';
 import Layout from '../modules/Layout';
+import 'react-big-calendar/lib/css/react-big-calendar.css';
 
 BigCalendar.setLocalizer(
   BigCalendar.momentLocalizer(moment)
 );
 
-class calendar extends React.Component {
+class Calendar extends React.Component {
   render() {
     return(
-      <div>
+      <div style={{ height: '75vh'}}>
         <BigCalendar
-          events={[]}
+          events={this.props.events}
           startAccessor='startDate'
           endAccessor='endDate'
         />
-    </div>
+      </div>
     );
   }
 }
 
-export default calendar;
+export default Calendar;
