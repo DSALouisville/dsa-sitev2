@@ -11,6 +11,7 @@ import postList from './exampleList';
 import events from './events';
 import PostCard from '../modules/PostCard';
 import PostList from '../modules/PostList';
+import EventEditor from '../modules/EventEditor';
 import 'bootstrap/dist/css/bootstrap.css';
 import '../main.css';
 import 'react-big-calendar/lib/css/react-big-calendar.css';
@@ -27,6 +28,9 @@ storiesOf('Layout', module)
   ))
   .add('App layout component with post editor', () => (
     <Layout children={[<BlogAuthoring />]}/>
+  ))
+  .add('App layout component with event editor', () => (
+    <Layout children={[<EventEditor />]}/>
   ))
   .add('App layout component with post view', () => (
     <Layout children={[<BlogView post={ post }/>]} />
@@ -60,6 +64,17 @@ storiesOf('Calendar', module)
       <Row>
         <Col xs="8" mr-auto>
           <Calendar events={events} />
+        </Col>
+      </Row>
+    </Container>
+  ))
+
+storiesOf('Event editor', module)
+  .add('Event editor component', () => (
+    <Container>
+      <Row>
+        <Col xs="8" mr-auto>
+          <EventEditor />
         </Col>
       </Row>
     </Container>

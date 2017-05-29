@@ -14,6 +14,7 @@ class Blog extends React.Component {
   render() {
     return (
       <div>
+        <h1>Recent Posts</h1>
         <PostList list={this.props.list} />
       </div>
     );

@@ -38,16 +38,19 @@ export default class BlogAuthoring extends Component {
   render() {
     return (
       <div>
-      <div>
-        <BlogEditor
-          updateContent={this.updateContent.bind(this)}
-        />
-      </div>
-      <div>
-        <BlogView
-          post={this.state.post}
-        />
-      </div>
+        <h1>New Post</h1>
+        <div>
+          <BlogEditor
+            updateContent={this.updateContent.bind(this)}
+          />
+        </div>
+        <hr />
+        <h1>Preview</h1>
+        <div>
+          <BlogView
+            post={this.state.post}
+          />
+        </div>
       </div>
     );
   }
