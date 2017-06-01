@@ -13,16 +13,25 @@ class PostCard extends React.Component {
       <Container className="post-card">
         <a href={{ pathname: '/post', query: { postId: post._id }}}>
           <Row className="d-flex flex-row">
-            <span className="post-card-title p-2">
-              {post.title}
-            </span>
-            <span className="post-card-date p-2 ml-auto">{post.date}</span>
-          </Row>
-          <Row className="d-flex flex-row">
-            <span className="post-card-author p-2">{post.author}</span>
-          </Row>
-          <Row>
-            <span className="post-card-excerpt">{post.excerpt}</span>
+            <div className="d-inline-flex flex-column p-2 col-8">
+              <span className="post-card-title p-2">
+                {post.title}
+              </span>
+              <span className="post-card-author p-2">
+                {post.author}
+              </span>
+              <span className="post-card-excerpt p-2">
+                {post.excerpt}
+              </span>
+            </div>
+            <div className="d-inline-flex flex-column p-2 ml-auto">
+              <span className="post-card-date p-2 ml-auto">
+                {post.date}
+              </span>
+              <span className="post-card-thumb p-2 ml-auto">
+                <img src={post.thumbUrl} />
+              </span>
+            </div>
           </Row>
         </a>
       </Container>

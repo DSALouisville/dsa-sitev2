@@ -7,7 +7,7 @@ import Layout from '../modules/Layout';
 
 class Blog extends React.Component {
   static async getInitialProps ({req}) {
-    // const res = await fetch(`${process.env.serverUrl}/postList`);
+    const res = await fetch(`${process.env.serverUrl}/postList`);
     const json = await res.json();
     return { list: json };
   }

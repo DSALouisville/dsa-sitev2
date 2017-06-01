@@ -15,7 +15,7 @@ const Layout = (props) => (
           </Col>
           <Col xs="8" ml-auto className="d-flex flex-column ">
             <MenuBar/>
-            <div className="content full-width">
+            <div className="content float-left">
               {props.children}
             </div>
           </Col>

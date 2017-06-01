@@ -34,6 +34,10 @@
   margin-left: -10%;
 }
 
+.content h1 {
+  margin-bottom: 5vh;
+}
+
 a {
   color: black;
 }
@@ -75,11 +79,11 @@ a:hover {
 }
 
 .blog-title {
-  font-size: 2rem;
+  font-size: 1.5rem;
 }
 
 .blog-author {
-  font-size: 1.5rem;
+  font-size: 1.0rem;
 }
 
 .Calendar {

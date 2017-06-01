@@ -13,8 +13,8 @@ import PostCard from '../modules/PostCard';
 import PostList from '../modules/PostList';
 import EventEditor from '../modules/EventEditor';
 import 'bootstrap/dist/css/bootstrap.css';
-import '../main.css';
 import 'react-big-calendar/lib/css/react-big-calendar.css';
+import '../main.css';
 
 storiesOf('Layout', module)
   .add('App layout component', () => (
