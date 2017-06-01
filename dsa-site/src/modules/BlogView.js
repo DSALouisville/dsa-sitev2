@@ -3,6 +3,19 @@ import _ from 'lodash';
 import Markdown from 'react-markdown';
 
 class BlogView extends React.Component {
+  makeImage(key) {
+    console.log(this.props);
+    return `<div>  ![${this.props.post.assets[key].alt}](${this.props.post.assets[key].url}) </div>`;
+  }
+  addAssets(body) {
+    let b = body;
+    const matches = body.match(/\{.*\}/);
+    matches.map(match => match.slice(1, -1)).forEach(match => {
+      b = _.replace(b, `{${match}}`, this.makeImage(match));
+    });
+    return b;
+  }
+
   render() {
     const post = this.props.post;
     post.body = post.body ? post.body : '';
@@ -22,7 +35,7 @@ class BlogView extends React.Component {
           { author }
         </div>
         <div className="blog-body">
-          <Markdown source={ body }/>
+          <Markdown source={ this.addAssets(body) }/>
         </div>
         <div className="blog-tags">
           <ul className="tag-list">
