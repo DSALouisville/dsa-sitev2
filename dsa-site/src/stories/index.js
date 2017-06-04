@@ -12,6 +12,7 @@ import events from './events';
 import PostCard from '../modules/PostCard';
 import PostList from '../modules/PostList';
 import EventEditor from '../modules/EventEditor';
+import BlogBlockImage from '../modules/BlogBlockImage';
 import 'bootstrap/dist/css/bootstrap.css';
 import 'react-big-calendar/lib/css/react-big-calendar.css';
 import '../main.css';
@@ -79,3 +80,13 @@ storiesOf('Event editor', module)
       </Row>
     </Container>
   ))
+storiesOf('Blog Block image', module)
+  .add('Block image for blogpost', () => (
+    <Container>
+      <Row>
+        <Col xs="8" mr-auto>
+          <BlogBlockImage source={post.assets.pic2} />
+        </Col>
+      </Row>
+    </Container>
+  ));

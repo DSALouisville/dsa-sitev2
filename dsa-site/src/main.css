@@ -1,16 +1,26 @@
 @font-face {
-  font-family: Manifold;
-  src: url(fonts/ManifoldDSA-Regular.woff2);
+  font-family: Klima;
+  src: url(fonts/klima-regular-web.woff);
 }
 
 @font-face {
-  font-family: ManifoldX;
-  src: url(fonts/ManifoldDSA-Heavy.woff);
+  font-family: KlimaX;
+  src: url(fonts/klima-ultra-web.woff);
 }
 
 @font-face {
-  font-family: ManifoldB;
-  src: url(fonts/ManifoldDSA-Bold.woff2);
+  font-family: KlimaB;
+  src: url(fonts/klima-bold-web.woff);
+}
+
+@font-face {
+  font-family: KlimaU;
+  src: url(fonts/klima-ultra-web.woff);
+}
+
+@font-face {
+  font-family: KlimaM;
+  src: url(fonts/klima-medium-web.woff);
 }
 
 .screen {
@@ -19,13 +29,13 @@
   background-image:
     linear-gradient(to right, rgba(255,255,255,1), rgba(255,255,255,1) 20%, rgba(255,255,255,0.2)),
     linear-gradient(to bottom, rgba(239,31,39,0.5), rgba(274, 143, 143, 0.3) 40%, rgba(255,255,255,1) 65%),
-    url(img/gulag.jpg);
+    url(img/nodapl.png);
   background-size: contain;
 }
 
 .container {
   box-sizing: border-box;
-  font-family: "Manifold";
+  font-family: "Klima";
 }
 
 .content {
@@ -75,15 +85,14 @@ a:hover {
 }
 
 .blog-title, .blog-author {
-  font-family: "ManifoldB";
+  font-family: "KlimaM";
 }
 
 .blog-title {
-  font-size: 1.5rem;
+  font-size: 2.0rem;
 }
 
 .blog-author {
-  font-size: 1.0rem;
 }
 
 .Calendar {
