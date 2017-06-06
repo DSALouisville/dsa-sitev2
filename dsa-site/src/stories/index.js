@@ -13,6 +13,7 @@ import PostCard from '../modules/PostCard';
 import PostList from '../modules/PostList';
 import EventEditor from '../modules/EventEditor';
 import BlogBlockImage from '../modules/BlogBlockImage';
+import UploadedCard from '../modules/UploadedCard';
 import 'bootstrap/dist/css/bootstrap.css';
 import 'react-big-calendar/lib/css/react-big-calendar.css';
 import '../main.css';
@@ -86,6 +87,16 @@ storiesOf('Blog Block image', module)
       <Row>
         <Col xs="8" mr-auto>
           <BlogBlockImage source={post.assets.pic2} />
+        </Col>
+      </Row>
+    </Container>
+  ));
+storiesOf('Uploaded Card', module)
+  .add('Uploaded file card', () => (
+    <Container>
+      <Row>
+        <Col xs="8" mr-auto>
+          <UploadedCard file={{url: 'http://lorempixel.com/200/200/nature'}} />
         </Col>
       </Row>
     </Container>

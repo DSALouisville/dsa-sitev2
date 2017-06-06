@@ -1,4 +1,5 @@
 import React from 'react';
+import ReactS3Uploader from 'react-s3-uploader';
 import { Button, Form, FormGroup, Label, Input, FormText } from 'reactstrap';
 
 class BlogEditor extends React.Component {
@@ -27,6 +28,13 @@ class BlogEditor extends React.Component {
               id="content"
             />
             <FormText>Markdown supported</FormText>
+        </FormGroup>
+        <FormGroup>
+          <Label htmlFor="upload">Upload a file</Label>
+          <ReactS3Uploader
+            name="upload"
+            id="upload"
+          />
         </FormGroup>
         <FormGroup>
           <div className="short-field">
