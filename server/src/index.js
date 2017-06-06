@@ -3,6 +3,7 @@ import bodyParser from 'body-parser';
 import postList from './postList';
 import postId from './postId';
 import newPost from './newPost';
+import signedUrl from './signedUrl';
 import { store, check } from './hashPass';
 import cors from 'cors';
 
@@ -21,6 +22,8 @@ app.get('/postList', postList);
 app.post('/newPost', newPost);
 
 app.get('/post/:id', postId);
+
+app.post('/signedUrl', signedUrl);
 
 app.listen(PORT, () => {
   console.log(`Example app listening on port ${PORT}!`)

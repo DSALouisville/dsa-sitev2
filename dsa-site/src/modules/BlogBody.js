@@ -32,7 +32,7 @@ class BlogBody extends React.Component {
   render() {
     console.log(this.makeChunks());
     return (
-      <div>
+      <div className="blog-body">
         {this.makeChunks()}
       </div>
     )

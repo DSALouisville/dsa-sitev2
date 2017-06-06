@@ -6,6 +6,7 @@ import _ from 'lodash';
 import postListTest from './postListTest';
 import postIdTest from './postIdTest';
 import newPostTest from './newPostTest';
+import signedUrlTest from './signedUrlTest';
 import { setup, tearDown } from './helpers';
 
 
@@ -52,4 +53,5 @@ describe('API', () => {
 
   newPostTest();
 
+  signedUrlTest();
 });
