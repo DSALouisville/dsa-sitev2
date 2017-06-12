@@ -36,7 +36,7 @@ const signedUrl = async (req, res) => {
   const key = shortid.generate();
   const params = { Bucket: 'dsa-blog-assets', Key: key };
   const sUrl = s3.getSignedUrl('putObject', params)
-  res.send(JSON.stringify({ key, url: sUrl }));
+  res.send(JSON.stringify({ key, signedUrl: sUrl }));
 }
 
 export default signedUrl;

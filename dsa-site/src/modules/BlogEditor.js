@@ -1,8 +1,21 @@
 import React from 'react';
 import ReactS3Uploader from 'react-s3-uploader';
 import { Button, Form, FormGroup, Label, Input, FormText } from 'reactstrap';
+import each from 'lodash/each';
+import UploadedCard from './UploadedCard';
 
 class BlogEditor extends React.Component {
+  constructor(props) {
+    super(props);
+  }
+  makeUploadList() {
+    const result = [];
+    each(this.props.assets, (asset, key) => {
+      asset.key = key;
+      result.push((<UploadedCard file={asset} />))
+    });
+    return result
+  }
   render() {
     return (
       <Form>
@@ -35,6 +48,7 @@ class BlogEditor extends React.Component {
             name="upload"
             id="upload"
           />
+          {this.makeUploadList()}
         </FormGroup>
         <FormGroup>
           <div className="short-field">
@@ -43,6 +57,7 @@ class BlogEditor extends React.Component {
               name="username"
               onChange={this.props.updateContent.bind(null, 'username')}
               id="username"
+
             />
           </div>
           <div className="short-field">

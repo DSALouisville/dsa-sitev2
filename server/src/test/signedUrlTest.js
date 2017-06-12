@@ -50,7 +50,7 @@ const signedUrlTest = () => describe('POST /signedUrl', () => {
       json: true,
       resolveWithFullResponse: true,
     });
-    expect(resp.body.url).to.include('AWSAccessKeyId');
+    expect(resp.body.signedUrl).to.include('AWSAccessKeyId');
   });
 });
 

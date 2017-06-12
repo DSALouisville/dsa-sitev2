@@ -5,6 +5,7 @@ import Layout from '../modules/Layout';
 import Calendar from '../modules/Calendar';
 import Blog from '../modules/Blog';
 import BlogAuthoring from '../modules/BlogAuthoring';
+import BlogEditor from '../modules/BlogEditor';
 import BlogView from '../modules/BlogView';
 import post from './examplePost';
 import postList from './exampleList';
@@ -17,6 +18,11 @@ import UploadedCard from '../modules/UploadedCard';
 import 'bootstrap/dist/css/bootstrap.css';
 import 'react-big-calendar/lib/css/react-big-calendar.css';
 import '../main.css';
+
+const file = {
+  url: 'http://lorempixel.com/300/200/nature',
+  key: 'G68dwh'
+}
 
 storiesOf('Layout', module)
   .add('App layout component', () => (
@@ -96,7 +102,19 @@ storiesOf('Uploaded Card', module)
     <Container>
       <Row>
         <Col xs="8" mr-auto>
-          <UploadedCard file={{url: 'http://lorempixel.com/200/200/nature'}} />
+          <UploadedCard file={file} />
+        </Col>
+      </Row>
+    </Container>
+  ));
+storiesOf('BlogEditor', module)
+  .add('form to enter a post', () => (
+    <Container>
+      <Row>
+        <Col xs="8" mr-auto>
+          <BlogEditor
+            assets={post.assets}
+            updateContent={()=>{}}/>
         </Col>
       </Row>
     </Container>

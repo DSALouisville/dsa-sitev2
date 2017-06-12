@@ -42,6 +42,7 @@ export default class BlogAuthoring extends Component {
         <div>
           <BlogEditor
             updateContent={this.updateContent.bind(this)}
+            post={this.state.post}
           />
         </div>
         <hr />

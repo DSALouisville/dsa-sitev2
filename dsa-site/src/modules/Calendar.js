@@ -10,12 +10,13 @@ BigCalendar.setLocalizer(
 
 class Calendar extends React.Component {
   render() {
+    const events = this.props.events || [];
     return(
       <div>
         <h1>Events</h1>
         <div style={{ height: '75vh'}}>
           <BigCalendar
-            events={this.props.events}
+            events={events}
             startAccessor='startDate'
             endAccessor='endDate'
           />
